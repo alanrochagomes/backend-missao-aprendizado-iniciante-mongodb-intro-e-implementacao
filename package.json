@@ -1,0 +1,20 @@
+{
+  "name": "backend-missao-aprendizado-iniciante-mongodb-intro-e-implementacao",
+  "version": "1.0.0",
+  "description": "Projeto da Missão de Aprendizado da profissão Dev Backend JavaScript, nível Iniciante: MongoDB: Intro e Implementação.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
