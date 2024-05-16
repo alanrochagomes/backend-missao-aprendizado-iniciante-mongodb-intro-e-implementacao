@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 // Preparamos as informações de acesso ao banco de dados
 const dbUrl = "mongodb+srv://admin:0gBtXxZYF6Nm1Cjx@cluster0.h9ymzz7.mongodb.net/";
@@ -35,12 +35,12 @@ async function main() {
   });
 
   // Endpoint Read By Id [GET] /personagem/:id
-  app.get("/personagem/:id", function (req, res) {
+  app.get("/personagem/:id", async function (req, res) {
     // Acessamos o parâmetro de rota ID-
     const id = req.params.id;
 
-    // Acessa o item na lista usando o Id - 1
-    const item = lista[id - 1];
+    // Acessa o item na collection usando o Id 
+    const item = await collection.findOne({ _id: new ObjectId(id) })
 
     // Checamos se o item obtido é existente
     if (!item) {
