@@ -117,13 +117,13 @@ async function main() {
 
     // Checamos se o item do ID -1 está na lista, exibindo
     // uma mensagem caso não esteja
-    if (!lista[id - 1]) {
-      return res.status(404).send("Item não encontrado.");
-    }
+    // if (!lista[id - 1]) {
+    //   return res.status(404).send("Item não encontrado.");
+    // }
 
-    // Remover o item da lista usando o ID - 1
-    delete lista[id - 1];
-
+    // Remover o item da collection usando o ID
+    collection.deleteOne({ _id: new ObjectId(id) })
+    
     // Enviamos uma mensagem de sucesso
     res.send("Item removido com sucesso: " + id);
   });
